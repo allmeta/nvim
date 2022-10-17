@@ -1,6 +1,8 @@
--- todo:
 -- statusline
 -- lsp
+-- dashboard?
+-- whichkey labels
+pcall(require, 'impatient')
 
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local install_plugins = false
@@ -17,6 +19,8 @@ end
 
 require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
+
+  use 'lewis6991/impatient.nvim'
 
   use 'folke/tokyonight.nvim'
   use {
@@ -59,6 +63,12 @@ require('packer').startup({function(use)
       auto_install = true,
     } end
   }
+  use {
+    "rebelot/heirline.nvim"
+  }
+  use {
+    'stevearc/dressing.nvim'
+  }
 
   if install_plugins then
     require('packer').sync()
@@ -77,7 +87,7 @@ end
 
 opt = {
   backspace = vim.opt.backspace + { "nostop" }, -- Don't stop backspace at insert
-  clipboard = "unnamedplus", -- Connection to the system clipboard
+  clipboard = "", -- Connection to the system clipboard
   cmdheight = 0, -- hide command line unless needed
   completeopt = { "menuone", "noselect" }, -- Options for insert mode completion
   copyindent = true, -- Copy the previous indentation on autoindenting
@@ -273,3 +283,9 @@ vim.api.nvim_set_hl(0, "LvimInfoHeader", {fg=colors.bg_alt , bg=colors.green})
 vim.api.nvim_set_hl(0, "LvimInfoIdentifier", {fg=colors.red , bg=colors.bg_alt})
 vim.api.nvim_set_hl(0, "TelescopeSelection", {bg=colors.bg})
 vim.api.nvim_set_hl(0, "TelescopeNormal", {bg=colors.bg_alt})
+
+-- heirline
+local heirline = require"heirline"
+heirline.load_colors(colors)
+
+-- mode file git git-diff     LSP line %
