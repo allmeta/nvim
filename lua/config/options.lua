@@ -1,4 +1,4 @@
-opt = {
+local opt = {
   backspace = vim.opt.backspace + { "nostop" }, -- Don't stop backspace at insert
   clipboard = "", -- Connection to the system clipboard
   cmdheight = 0, -- hide command line unless needed
@@ -36,7 +36,7 @@ opt = {
   writebackup = false, -- Disable making a backup before overwriting a file
 }
 
-g = {
+local g = {
   highlighturl_enabled = true, -- highlight URLs by default
   mapleader = " ", -- set leader key
   zipPlugin = false, -- disable zip
@@ -63,10 +63,10 @@ g = {
   status_diagnostics_enabled = true, -- enable diagnostics in statusline
 }
 
-for k,v in pairs(opt) do
-  vim.opt[k]=v
+for k, v in pairs(opt) do
+  vim.opt[k] = v
 end
 
-for k,v in pairs(g) do
-  vim.g[k]=v
+for k, v in pairs(g) do
+  vim.g[k] = v
 end
