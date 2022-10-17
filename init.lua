@@ -23,32 +23,53 @@ require('packer').startup({function(use)
   use 'lewis6991/impatient.nvim'
 
   use 'folke/tokyonight.nvim'
+
   use {
     'folke/which-key.nvim',
     config = function()
       require('which-key').setup {}
     end
   }
+
   use {
     'nvim-telescope/telescope.nvim',
     requires = {'nvim-lua/plenary.nvim'},
   }
+
   use {
     'windwp/nvim-autopairs',
-    config = function() require"nvim-autopairs".setup{} end
+    config = function() require"nvim-autopairs".setup {
+      disable_filetype = { "TelescopePrompt", "spectre_panel" },
+      check_ts = true,
+      fast_wrap = {
+        map = "<M-e>",
+        chars = { "{", "[", "(", '"', "'" },
+        pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
+        offset = 0,
+        end_key = "$",
+        keys = "qwertyuiopzxcvbnmasdfghjkl",
+        check_comma = true,
+        highlight = "PmenuSel",
+        highlight_grey = "LineNr",
+      },
+    } end
   }
+
   use {
     'kylechui/nvim-surround',
     config = function() require"nvim-surround".setup{} end
   }
+
   use {
     'akinsho/toggleterm.nvim',
     config = function() require"toggleterm".setup{} end
   }
+
   use {
     'numToStr/Comment.nvim',
     config = function() require'Comment'.setup{} end
   }
+
   use {
     'nvim-neo-tree/neo-tree.nvim',
     requires = {
@@ -56,6 +77,7 @@ require('packer').startup({function(use)
       "MunifTanjim/nui.nvim",
     },
   }
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require'nvim-treesitter.install'.update({ with_sync = true }) end,
@@ -63,9 +85,11 @@ require('packer').startup({function(use)
       auto_install = true,
     } end
   }
+
   use {
     "rebelot/heirline.nvim"
   }
+
   use {
     'stevearc/dressing.nvim'
   }
@@ -289,3 +313,4 @@ local heirline = require"heirline"
 heirline.load_colors(colors)
 
 -- mode file git git-diff     LSP line %
+
