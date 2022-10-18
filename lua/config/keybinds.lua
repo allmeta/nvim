@@ -27,6 +27,7 @@ local keybinds = {
     ["<leader>gs"] = "<cmd>Telescope git_status<cr>",
     -- LSP
     ["<leader>li"] = "<cmd>LspInfo<cr>",
+    ["<leader>ll"] = "<cmd>LspLog<cr>",
     -- Util
     ["<leader>sk"] = "<cmd>Telescope keymaps<cr>",
     ["<leader>sc"] = "<cmd>Telescope commands<cr>",

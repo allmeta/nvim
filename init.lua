@@ -1,11 +1,6 @@
 -- statusline
--- lsp
--- dashboard?
--- whichkey labels
--- diagnostics underline
 -- diagnostics icons
 -- smooth fresh install
--- autoconfig installed lsp servers
 
 pcall(require, 'impatient')
 
