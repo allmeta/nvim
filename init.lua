@@ -1,11 +1,14 @@
 -- statusline
 -- whichkey labels
-require'impatient'
+pcall(require, 'impatient')
 
 require 'config.options'
 require 'config.keybinds'
 require 'config.packer'
 
-vim.cmd 'colorscheme tokyonight-night'
+local ok,_ = pcall(vim.cmd, 'colorscheme tokyonight-night')
+if not ok then
+  vim.cmd 'colorscheme habamax'
+end
 
 require 'config.tokyonight'

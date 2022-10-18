@@ -1,5 +1,8 @@
 -- Telescope NvChad theme
-local colors = require'tokyonight.colors'.setup()
+local ok, c = pcall(require, 'tokyonight.colors')
+if not ok then return end
+
+local colors = c.setup()
 
 colors.bg_alt = colors.bg_dark
 colors.bg = colors.bg_highlight
