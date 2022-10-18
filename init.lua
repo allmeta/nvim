@@ -1,5 +1,4 @@
 -- statusline
--- diagnostics icons
 -- whichkey labels
 require'impatient'
 
