@@ -13,6 +13,7 @@ local keybinds = {
     ["<C-'>"] = "<cmd>ToggleTerm<cr>",
     -- Packer
     ["<leader>pc"] = "<cmd>PackerCompile<cr>",
+    ["<leader>pC"] = "<cmd>PackerClean<cr>",
     ["<leader>ps"] = "<cmd>PackerSync<cr>",
     ["<leader>pS"] = "<cmd>PackerStatus<cr>",
     ["<leader>pu"] = "<cmd>PackerUpdate<cr>",

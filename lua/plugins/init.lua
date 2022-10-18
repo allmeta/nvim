@@ -1,26 +1,25 @@
 return {
   { 'wbthomason/packer.nvim' },
-
   { 'lewis6991/impatient.nvim' },
 
   { 'folke/tokyonight.nvim' },
 
   {
     'folke/which-key.nvim',
-    config = function()
-      require('which-key').setup {}
-    end
+    config = function() require 'which-key'.setup {} end
   },
 
   {
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require 'telescope'.setup(require 'config.telescope')
+    end,
   },
 
   {
     'windwp/nvim-autopairs',
-    config = function()
-      require "nvim-autopairs".setup {
+    config = function() require "nvim-autopairs".setup {
         disable_filetype = { "TelescopePrompt", "spectre_panel" },
         check_ts = true,
         fast_wrap = {
@@ -84,6 +83,18 @@ return {
     end
   },
 
+  { 'hrsh7th/cmp-buffer' },
+  { 'hrsh7th/cmp-path' },
+  { 'hrsh7th/cmp-cmdline' },
+  { 'hrsh7th/nvim-cmp' },
+  { 'L3MON4D3/LuaSnip' },
+  { 'saadparwaiz1/cmp_luasnip' },
+
+  {
+    'hrsh7th/cmp-nvim-lsp',
+    config = function() require 'plugins.cmp' end,
+  },
+
   {
     'williamboman/mason.nvim',
     config = function() require 'mason'.setup() end
@@ -91,23 +102,14 @@ return {
 
   {
     'williamboman/mason-lspconfig.nvim',
-    after = 'mason.nvim',
     config = function() require 'mason-lspconfig'.setup {
-      automatic_installation = true,
-    } end
+        automatic_installation = true,
+      }
+    end
   },
 
   {
     'neovim/nvim-lspconfig',
-    after = 'mason-lspconfig.nvim'
+    config = function() require 'plugins.lsp' end,
   },
-
-
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'hrsh7th/cmp-buffer' },
-  { 'hrsh7th/cmp-path' },
-  { 'hrsh7th/cmp-cmdline' },
-  { 'hrsh7th/nvim-cmp' },
-  {'L3MON4D3/LuaSnip'},
-  {'saadparwaiz1/cmp_luasnip'},
 }
