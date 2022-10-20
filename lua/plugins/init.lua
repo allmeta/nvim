@@ -54,6 +54,7 @@ return {
 
   {
     'nvim-neo-tree/neo-tree.nvim',
+    branch = "v2.x",
     requires = {
       "kyazdani42/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
@@ -112,4 +113,9 @@ return {
     'neovim/nvim-lspconfig',
     config = function() require 'plugins.lsp' end,
   },
+  {
+    'glepnir/galaxyline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function () require'config.statusline' end,
+  }
 }
