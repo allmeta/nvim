@@ -1,5 +1,5 @@
-local cok,cmp = pcall(require, 'cmp')
-local lok,luasnip = pcall(require, 'luasnip')
+local cok, cmp = pcall(require, 'cmp')
+local lok, luasnip = pcall(require, 'luasnip')
 if not (lok and cok) then return end
 
 cmp.setup({
@@ -43,12 +43,9 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
     { name = 'luasnip' }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
-  }, {
     { name = 'buffer' },
+    { name = 'path' },
   })
 })
 
@@ -56,7 +53,6 @@ cmp.setup({
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-  }, {
     { name = 'buffer' },
   })
 })
@@ -73,8 +69,7 @@ cmp.setup.cmdline({ '/', '?' }, {
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
+    { name = 'path' },
     { name = 'cmdline' }
   })
 })
