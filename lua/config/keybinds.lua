@@ -29,6 +29,7 @@ local keybinds = {
     -- LSP
     ["<leader>li"] = "<cmd>LspInfo<cr>",
     ["<leader>ll"] = "<cmd>LspLog<cr>",
+    ["<leader>lI"] = "<cmd>Mason<cr>",
     -- Util
     ["<leader>sk"] = "<cmd>Telescope keymaps<cr>",
     ["<leader>sc"] = "<cmd>Telescope commands<cr>",
