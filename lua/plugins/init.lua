@@ -117,5 +117,9 @@ return {
     'glepnir/galaxyline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function () require'config.statusline' end,
+  },
+  {
+    'j-hui/fidget.nvim',
+    config = function () require'fidget'.setup() end,
   }
 }
