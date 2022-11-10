@@ -2,7 +2,31 @@ return {
   { 'wbthomason/packer.nvim' },
   { 'lewis6991/impatient.nvim' },
 
-  { 'folke/tokyonight.nvim' },
+  {
+    'folke/tokyonight.nvim',
+    config = function()
+      local ok, c = pcall(require, 'tokyonight.colors')
+      if not ok then return end
+
+      local colors = c.setup()
+
+      colors.bg_alt = colors.bg_dark
+      colors.bg = colors.bg_highlight
+
+      vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.bg_alt, bg = colors.bg_alt })
+      vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = colors.bg, bg = colors.bg })
+      vim.api.nvim_set_hl(0, "TelescopePromptNormal", { fg = colors.fg, bg = colors.bg })
+      vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = colors.red, bg = colors.bg })
+      vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = colors.bg_alt, bg = colors.green })
+      vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = colors.bg_alt, bg = colors.red })
+      vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = colors.bg_alt, bg = colors.bg_alt })
+      vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = colors.bg_alt, bg = colors.bg_alt })
+      vim.api.nvim_set_hl(0, "LvimInfoHeader", { fg = colors.bg_alt, bg = colors.green })
+      vim.api.nvim_set_hl(0, "LvimInfoIdentifier", { fg = colors.red, bg = colors.bg_alt })
+      vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = colors.bg })
+      vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = colors.bg_alt })
+    end
+  },
 
   {
     'folke/which-key.nvim',
@@ -12,14 +36,14 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require 'telescope'.setup(require 'config.telescope')
+    config = function() require 'telescope'.setup(require 'config.telescope')
     end,
   },
 
   {
     'windwp/nvim-autopairs',
-    config = function() require "nvim-autopairs".setup {
+    config = function()
+      require "nvim-autopairs".setup {
         disable_filetype = { "TelescopePrompt", "spectre_panel" },
         check_ts = true,
         fast_wrap = {
@@ -59,7 +83,8 @@ return {
       "kyazdani42/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    config = function() require 'neo-tree'.setup {
+    config = function()
+      require 'neo-tree'.setup {
         close_if_last_window = true,
         follow_current_file = true,
         filesystem = {
