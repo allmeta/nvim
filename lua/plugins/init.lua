@@ -59,6 +59,19 @@ return {
       "kyazdani42/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
+    config = function() require 'neo-tree'.setup {
+        close_if_last_window = true,
+        follow_current_file = true,
+        filesystem = {
+          follow_current_file = true,
+          hijack_netrw_behavior = "open_current",
+          use_libuv_file_watcher = true,
+        },
+        window = {
+          width = 30,
+        },
+      }
+    end
   },
 
   {
@@ -116,10 +129,16 @@ return {
   {
     'glepnir/galaxyline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function () require'config.statusline' end,
+    config = function() require 'config.statusline' end,
   },
   {
     'j-hui/fidget.nvim',
-    config = function () require'fidget'.setup() end,
+    config = function() require 'fidget'.setup() end,
+  },
+  {
+    'akinsho/bufferline.nvim',
+    tag = "v3.*",
+    requires = 'nvim-tree/nvim-web-devicons',
+    config = function() require 'bufferline'.setup() end,
   }
 }

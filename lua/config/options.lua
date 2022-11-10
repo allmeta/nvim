@@ -61,7 +61,8 @@ local g = {
   autopairs_enabled = true, -- enable autopairs at start
   diagnostics_enabled = true, -- enable diagnostics at start
   status_diagnostics_enabled = true, -- enable diagnostics in statusline
-  neo_tree_remove_legacy_commands = true,
+  neo_tree_remove_legacy_commands = 1,
+  tokyonight_colors = { border = "yellow" },
 }
 
 for k, v in pairs(opt) do
