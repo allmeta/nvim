@@ -30,7 +30,18 @@ return {
 
   {
     'folke/which-key.nvim',
-    config = function() require 'which-key'.setup {} end
+    config = function()
+      local wk = require"which-key"
+      wk.setup {}
+      wk.register({
+        ["<leader>f"] = { name = "+file" },
+        ["<leader>p"] = { name = "+packer" },
+        ["<leader>l"] = { name = "+lsp" },
+        ["<leader>g"] = { name = "+git" },
+        ["<leader>s"] = { name = "+search" },
+        ["<leader>t"] = { name = "+terminal" },
+      })
+    end
   },
 
   {
@@ -102,7 +113,11 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     config = function() require "nvim-treesitter.configs".setup {
-        auto_install = true,
+        ensure_installed = "all",
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        }
       }
     end
   },

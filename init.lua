@@ -1,4 +1,3 @@
--- whichkey labels
 -- neo-tree follow hidden file
 -- lualine neo-tree
 pcall(require, 'impatient')
