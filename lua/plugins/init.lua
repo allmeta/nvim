@@ -113,7 +113,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     config = function() require "nvim-treesitter.configs".setup {
-        ensure_installed = "all",
+        ensure_installed = {"c","java", "kotlin", "haskell", "lua"},
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
