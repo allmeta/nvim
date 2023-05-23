@@ -1,7 +1,7 @@
 return {
   'nvim-telescope/telescope.nvim',
+  cmd = "Telescope",
   version = false,
-  event = "BufEnter",
   dependencies = {
     'nvim-lua/plenary.nvim',
   },

@@ -36,32 +36,10 @@ local opt = {
 }
 
 local g = {
-  highlighturl_enabled = true, -- highlight URLs by default
   mapleader = " ", -- set leader key
-  zipPlugin = false, -- disable zip
-  load_black = false, -- disable black
-  loaded_2html_plugin = true, -- disable 2html
-  loaded_getscript = true, -- disable getscript
-  loaded_getscriptPlugin = true, -- disable getscript
-  loaded_gzip = true, -- disable gzip
-  loaded_logipat = true, -- disable logipat
-  loaded_matchit = true, -- disable matchit
-  loaded_netrwFileHandlers = true, -- disable netrw
-  loaded_netrwPlugin = true, -- disable netrw
-  loaded_netrwSettngs = true, -- disable netrw
-  loaded_remote_plugins = true, -- disable remote plugins
-  loaded_tar = true, -- disable tar
-  loaded_tarPlugin = true, -- disable tar
-  loaded_zip = true, -- disable zip
-  loaded_zipPlugin = true, -- disable zip
-  loaded_vimball = true, -- disable vimball
-  loaded_vimballPlugin = true, -- disable vimball
-  cmp_enabled = true, -- enable completion at start
-  autopairs_enabled = true, -- enable autopairs at start
   diagnostics_enabled = true, -- enable diagnostics at start
   status_diagnostics_enabled = true, -- enable diagnostics in statusline
-  neo_tree_remove_legacy_commands = 1,
-  tokyonight_colors = { border = "yellow" },
+  markdown_recommended_style = 0, -- Fix markdown indentation settings
 }
 
 for k, v in pairs(opt) do

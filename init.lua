@@ -19,6 +19,27 @@ require("lazy").setup("allmeta.plugins", {
   install = {
     colorscheme = { "tokyonight-night", "habamax" },
   },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "editorconfig",
+        "health",
+        "matchit",
+        "netrwPlugin",
+        "rplugin",
+        "spellfile",
+        "tohtml",
+        "zipPlugin",
+        "gzip",
+        "man",
+        "matchparen",
+        "nvim",
+        "shada",
+        "tarPlugin",
+        "tutor",
+      },
+    },
+  },
 })
 
 local ok, _ = pcall(vim.cmd, 'colorscheme tokyonight-night')

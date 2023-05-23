@@ -15,7 +15,7 @@ local keybinds = {
     -- NeoTree
     ["<C-n>"] = { "<cmd>Neotree toggle<cr>", {} },
     -- Lazy
-    ["<leader>L"] = { "<cmd>:Lazy<cr>", { desc = "Desc" } },
+    ["<leader>L"] = { "<cmd>Lazy<cr>", { desc = "Desc" } },
     -- Git
     ["<leader>gc"] = { "<cmd>Telescope git_commits<cr>", { desc = "Git commits" } },
     ["<leader>gb"] = { "<cmd>Telescope git_branches<cr>", { desc = "Git branches" } },
@@ -41,8 +41,13 @@ local keybinds = {
     ["<leader>w|"] = { "<C-w>v", { desc = "Split right" } },
     ["<leader>-"] = { "<C-w>s", { desc = "Split below" } },
     ["<leader>|"] = { "<C-w>v", { desc = "Split right" } },
+    -- Buffer
     ["<C-]>"] = { "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" } },
     ["<C-[>"] = { "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" } },
+    ["<leader>bn"] = { "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" } },
+    ["<leader>bp"] = { "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" } },
+    ["<leader>bc"] = { "<cmd>bd<cr>", { desc = "Close buffer" } },
+    ["<leader>bd"] = { "<cmd>bd<cr>", { desc = "Close buffer" } },
     -- Misc
     ["<leader><leader>"] = { "", {} },
     ["<esc>"] = { "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" } },

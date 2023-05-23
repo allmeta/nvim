@@ -23,11 +23,11 @@ return {
       wk.setup {}
       wk.register({
         ["<leader>f"] = { name = "+file" },
-        ["<leader>p"] = { name = "+packer" },
         ["<leader>l"] = { name = "+lsp" },
         ["<leader>g"] = { name = "+git" },
         ["<leader>s"] = { name = "+search" },
         ["<leader>m"] = { name = "+noice" },
+        ["<leader>b"] = { name = "+buffer" },
       })
     end
   },
@@ -154,10 +154,10 @@ return {
   {
     "echasnovski/mini.ai",
     event = "VeryLazy",
-    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
-    opts = function()
+    dependencies = "nvim-treesitter/nvim-treesitter-textobjects",
+    config = function()
       local ai = require("mini.ai")
-      return {
+      ai.setup {
         n_lines = 500,
         custom_textobjects = {
           o = ai.gen_spec.treesitter({
@@ -169,49 +169,6 @@ return {
         },
       }
     end,
-    config = function(_, opts)
-      require("mini.ai").setup(opts)
-      -- register all text objects with which-key
-      local i = {
-        [" "] = "Whitespace",
-        ['"'] = 'Balanced "',
-        ["'"] = "Balanced '",
-        ["`"] = "Balanced `",
-        ["("] = "Balanced (",
-        [")"] = "Balanced ) including white-space",
-        [">"] = "Balanced > including white-space",
-        ["<lt>"] = "Balanced <",
-        ["]"] = "Balanced ] including white-space",
-        ["["] = "Balanced [",
-        ["}"] = "Balanced } including white-space",
-        ["{"] = "Balanced {",
-        ["?"] = "User Prompt",
-        _ = "Underscore",
-        a = "Argument",
-        b = "Balanced ), ], }",
-        c = "Class",
-        f = "Function",
-        o = "Block, conditional, loop",
-        q = "Quote `, \", '",
-        t = "Tag",
-      }
-      local a = vim.deepcopy(i)
-      for k, v in pairs(a) do
-        a[k] = v:gsub(" including.*", "")
-      end
-
-      local ic = vim.deepcopy(i)
-      local ac = vim.deepcopy(a)
-      for key, name in pairs({ n = "Next", l = "Last" }) do
-        i[key] = vim.tbl_extend("force", { name = "Inside " .. name .. " textobject" }, ic)
-        a[key] = vim.tbl_extend("force", { name = "Around " .. name .. " textobject" }, ac)
-      end
-      require("which-key").register({
-        mode = { "o", "x" },
-        i = i,
-        a = a,
-      })
-    end
   },
 
 }
