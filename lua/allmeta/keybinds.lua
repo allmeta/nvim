@@ -7,8 +7,8 @@ local keybinds = {
     ["<leader>fo"] = { "<cmd>Telescope oldfiles<cr>", { desc = "Old files" } },
     ["<leader>fw"] = { "<cmd>Telescope live_grep<cr>", { desc = "Grep" } },
     ["<leader>fb"] = { "<cmd>Telescope buffers<cr>", { desc = "Buffers" } },
-    -- BetterTerm
-    ["<C-.>"] = { function() require 'betterTerm'.select() end, { desc = "Terminal" } },
+    -- ToggleTerm
+    ["<C-;>"] = { "<cmd>ToggleTerm<cr>", { desc = "Terminal" } },
     -- Comment
     ["<leader>/"] = { function() require("Comment.api").toggle.linewise.current() end, { desc = "Comment" } },
     ["<C-/>"] = { function() require("Comment.api").toggle.linewise.current() end, { desc = "Comment" } },
@@ -60,7 +60,7 @@ local keybinds = {
     ["<C-h>"] = { "<C-\\><C-n><C-w>h", {} },
     ["<C-l>"] = { "<C-\\><C-n><C-w>l", {} },
     ["<Esc>"] = { "<C-\\><C-n>", {} },
-    ["<C-'>"] = { "<cmd>ToggleTerm<cr>", {} },
+    ["<C-;>"] = { "<cmd>ToggleTerm<cr>", {} },
     -- NeoTree
     ["<C-n>"] = { "<cmd>Neotree toggle<cr>", {} },
   },

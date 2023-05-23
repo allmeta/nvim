@@ -101,11 +101,6 @@ return {
   },
 
   {
-    'CRAG666/betterTerm.nvim',
-    config = function() require "betterTerm".setup {} end
-  },
-
-  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {},
@@ -169,6 +164,17 @@ return {
         },
       }
     end,
+  },
+
+  {
+    "akinsho/toggleterm.nvim",
+    cmd = "ToggleTerm",
+    version = false,
+    opts = {
+      size = 10,
+      direction = "horizontal",
+    },
+    config = true
   },
 
 }
