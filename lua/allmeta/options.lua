@@ -49,3 +49,9 @@ end
 for k, v in pairs(g) do
   vim.g[k] = v
 end
+
+vim.filetype.add({
+  extension = {
+    pp = 'ruby',
+  }
+})
