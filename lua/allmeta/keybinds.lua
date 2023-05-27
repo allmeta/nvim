@@ -52,6 +52,7 @@ local keybinds = {
     ["<leader><leader>"] = { "", {} },
     ["<esc>"] = { "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" } },
     ["<leader>c"] = { "<cmd>cd %:h<cr>", { desc = "cd" } },
+    ["<leader>p"] = { '"+p', { desc = "Paste clipboard" } },
   },
 
   t = {
@@ -72,6 +73,8 @@ local keybinds = {
     -- Rebinds
     ["<"] = { "<gv", {} },
     [">"] = { ">gv", {} },
+    ["<leader>p"] = { '"+p', { desc = "Paste clipboard" } },
+    ["<leader>y"] = { '"+y', { desc = "Yank clipboard" } },
   },
 }
 
