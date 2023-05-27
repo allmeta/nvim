@@ -40,6 +40,7 @@ local g = {
   diagnostics_enabled = true, -- enable diagnostics at start
   status_diagnostics_enabled = true, -- enable diagnostics in statusline
   markdown_recommended_style = 0, -- Fix markdown indentation settings
+  neo_tree_remove_legacy_commands = 1,
 }
 
 for k, v in pairs(opt) do

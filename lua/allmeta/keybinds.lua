@@ -13,7 +13,7 @@ local keybinds = {
     ["<leader>/"] = { function() require("Comment.api").toggle.linewise.current() end, { desc = "Comment" } },
     ["<C-/>"] = { function() require("Comment.api").toggle.linewise.current() end, { desc = "Comment" } },
     -- NeoTree
-    ["<C-n>"] = { "<cmd>Neotree toggle<cr>", {} },
+    ["<C-n>"] = { "<cmd>Neotree toggle reveal<cr>", {} },
     -- Lazy
     ["<leader>L"] = { "<cmd>Lazy<cr>", { desc = "Desc" } },
     -- Git
@@ -62,7 +62,7 @@ local keybinds = {
     ["<Esc>"] = { "<C-\\><C-n>", {} },
     ["<C-;>"] = { "<cmd>ToggleTerm<cr>", {} },
     -- NeoTree
-    ["<C-n>"] = { "<cmd>Neotree toggle<cr>", {} },
+    ["<C-n>"] = { "<cmd>Neotree toggle reveal<cr>", {} },
   },
 
   v = {

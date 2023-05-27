@@ -13,7 +13,7 @@ return {
 
   { "nvim-lua/plenary.nvim" },
 
-  { "tpope/vim-repeat", event = "VeryLazy" },
+  { "tpope/vim-repeat",     event = "VeryLazy" },
 
   {
     "folke/which-key.nvim",
@@ -36,7 +36,8 @@ return {
     'nvim-treesitter/nvim-treesitter',
     version = false,
     event = { "BufReadPost", "BufNewFile" },
-    config = function() require "nvim-treesitter.configs".setup {
+    config = function()
+      require "nvim-treesitter.configs".setup {
         ensure_installed = { "c", "java", "kotlin", "haskell", "lua", 'vim', 'regex', 'bash', 'markdown',
           'markdown_inline' },
         highlight = { enable = true },
@@ -113,12 +114,10 @@ return {
   {
     "stevearc/dressing.nvim",
     init = function()
-      ---@diagnostic disable-next-line: duplicate-set-field
       vim.ui.select = function(...)
         require("lazy").load({ plugins = { "dressing.nvim" } })
         return vim.ui.select(...)
       end
-      ---@diagnostic disable-next-line: duplicate-set-field
       vim.ui.input = function(...)
         require("lazy").load({ plugins = { "dressing.nvim" } })
         return vim.ui.input(...)
@@ -143,6 +142,32 @@ return {
         },
       },
     },
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    cmd = "Neotree",
+    config = function()
+      require 'neo-tree'.setup {
+        filesystem = {
+          follow_current_file = false,
+          use_libuv_file_watcher = true,
+        },
+        window = {
+          mappings = {
+            ["<space>"] = "none",
+          },
+        },
+        default_component_configs = {
+          indent = {
+            with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+            expander_collapsed = "",
+            expander_expanded = "",
+            expander_highlight = "NeoTreeExpander",
+          },
+        },
+      }
+    end
   },
 
   -- better text-objects

@@ -25,6 +25,7 @@ require("lazy").setup("allmeta.plugins", {
         "editorconfig",
         "health",
         "matchit",
+        "netrw",
         "netrwPlugin",
         "rplugin",
         "spellfile",
