@@ -13,8 +13,6 @@ return {
 
   { "nvim-lua/plenary.nvim" },
 
-  { "tpope/vim-repeat",     event = "VeryLazy" },
-
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
