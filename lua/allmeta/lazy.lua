@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("allmeta.plugins", {
   defaults = {
-    lazy = true
   },
   install = {
     colorscheme = { "tokyonight-night", "habamax" },
