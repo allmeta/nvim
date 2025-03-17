@@ -44,17 +44,16 @@ return {
   },
 
   {
-    "echasnovski/mini.surround",
-    version = false,
+    "kylechui/nvim-surround",
+    version = "^3.0.0",
     event = "VeryLazy",
-    config = function() require 'mini.surround'.setup() end,
+    config = function() require("nvim-surround").setup() end,
   },
 
   {
-    "echasnovski/mini.pairs",
-    version = false,
-    event = "VeryLazy",
-    config = function() require "mini.pairs".setup() end,
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true,
   },
 
   {
