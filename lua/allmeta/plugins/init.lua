@@ -19,13 +19,13 @@ return {
     config = function()
       local wk = require "which-key"
       wk.setup {}
-      wk.register({
-        ["<leader>f"] = { name = "+file" },
-        ["<leader>l"] = { name = "+lsp" },
-        ["<leader>g"] = { name = "+git" },
-        ["<leader>s"] = { name = "+search" },
-        ["<leader>m"] = { name = "+noice" },
-        ["<leader>b"] = { name = "+buffer" },
+      wk.add({
+        { "<leader>b", group = "buffer" },
+        { "<leader>f", group = "file" },
+        { "<leader>g", group = "git" },
+        { "<leader>l", group = "lsp" },
+        { "<leader>m", group = "noice" },
+        { "<leader>s", group = "search" },
       })
     end
   },
@@ -36,8 +36,7 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require "nvim-treesitter.configs".setup {
-        ensure_installed = { "c", "java", "kotlin", "haskell", "lua", 'vim', 'regex', 'bash', 'markdown',
-          'markdown_inline' },
+        ensure_installed = {  "haskell", "lua", 'vim',  'bash', 'markdown', 'markdown_inline' },
         highlight = { enable = true },
         indent = { enable = true },
       }

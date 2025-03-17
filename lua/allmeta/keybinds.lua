@@ -15,7 +15,7 @@ local keybinds = {
     -- NeoTree
     ["<C-n>"] = { "<cmd>Neotree toggle reveal<cr>", {} },
     -- Lazy
-    ["<leader>L"] = { "<cmd>Lazy<cr>", { desc = "Desc" } },
+    ["<leader>L"] = { "<cmd>Lazy<cr>", { desc = "Lazy" } },
     -- Git
     ["<leader>gc"] = { "<cmd>Telescope git_commits<cr>", { desc = "Git commits" } },
     ["<leader>gb"] = { "<cmd>Telescope git_branches<cr>", { desc = "Git branches" } },
