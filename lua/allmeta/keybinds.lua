@@ -8,7 +8,7 @@ local keybinds = {
     ["<leader>fw"] = { "<cmd>Telescope live_grep<cr>", { desc = "Grep" } },
     ["<leader>fb"] = { "<cmd>Telescope buffers<cr>", { desc = "Buffers" } },
     -- ToggleTerm
-    ["<C-;>"] = { "<cmd>ToggleTerm<cr>", { desc = "Terminal" } },
+    ["<C-`>"] = { "<cmd>ToggleTerm<cr>", { desc = "Terminal" } },
     -- Comment
     ["<leader>/"] = { function() require("Comment.api").toggle.linewise.current() end, { desc = "Comment" } },
     ["<C-/>"] = { function() require("Comment.api").toggle.linewise.current() end, { desc = "Comment" } },
